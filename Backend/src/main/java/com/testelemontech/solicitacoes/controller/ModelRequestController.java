@@ -2,48 +2,33 @@ package com.testelemontech.solicitacoes.controller;
 
 import com.testelemontech.solicitacoes.model.ModelRequest;
 import com.testelemontech.solicitacoes.service.ModelRequestService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * - GET /solicitacoes: Exibe todas as solicitações persistidas no banco.
- * - GET /sincronizar: Sincroniza solicitações do WebService e salva no banco.
- */
 @RestController
 @RequestMapping("/solicitacoes")
+@CrossOrigin(origins = "*")
 public class ModelRequestController {
 
-    private final ModelRequestService service;
+    @Autowired
+    private ModelRequestService service;
 
-    public ModelRequestController(ModelRequestService service) {
-        this.service = service;
-    }
-
-    // Endpoint para exibir todas as solicitações persistidas no banco
     @GetMapping
-    public ResponseEntity<List<ModelRequest>> exibirSolicitacoes() {
-        try {
-            List<ModelRequest> solicitacoes = service.getAllModelRequests();  // Busca as solicitações persistidas
-            return ResponseEntity.ok(solicitacoes);
-        } catch (Exception e) {
-            // Log do erro pode ser adicionado aqui
-            return ResponseEntity.status(500).body(null);  // Retorna erro em caso de falha
-        }
+    public ResponseEntity<List<ModelRequest>> getAllSolicitacoes() {
+        List<ModelRequest> solicitacoes = service.getAllModelRequests();
+        return ResponseEntity.ok(solicitacoes);
     }
 
-    // Endpoint para sincronizar as solicitações via WebService e salvar no banco
     @GetMapping("/sincronizar")
-    public ResponseEntity<List<ModelRequest>> sincronizarSolicitacoes() {
+    public ResponseEntity<?> sincronizarSolicitacoes() {
         try {
-            List<ModelRequest> solicitacoes = service.sincronizarSolicitacoes();  // Sincroniza e salva as solicitações
-            return ResponseEntity.ok(solicitacoes);
+            List<ModelRequest> novasSolicitacoes = service.sincronizarSolicitacoes();
+            return ResponseEntity.ok(novasSolicitacoes.isEmpty() ? "Nenhuma nova solicitação encontrada." : novasSolicitacoes);
         } catch (Exception e) {
-            // Log do erro pode ser adicionado aqui
-            return ResponseEntity.status(500).body(null);  // Retorna erro em caso de falha
+            return ResponseEntity.internalServerError().body("Erro ao sincronizar: " + e.getMessage());
         }
     }
 }
