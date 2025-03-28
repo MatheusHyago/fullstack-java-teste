@@ -9,7 +9,7 @@ Método a ser utilizado: pesquisarSolicitacao.
 ### Requisito
 
 Consultar as solicitações de viagens filtrando pelos últimos 3 meses e separar apenas as que contenham produtos Aéreos.
-
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
 ### Arquitetura e documentação
 
 Modelo de Arquitetura utilizado: MVC divido em duas partes Backend / Frontend 
@@ -17,8 +17,8 @@ Modelo de Arquitetura utilizado: MVC divido em duas partes Backend / Frontend
 Backend estrutura / tecnologia e bibliotecas
 Linguagem Java 17
 Bibliotecas Spring Boot
-
-Estrutura Backend:
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+### Estrutura Backend
 
  controller/
  ModelRequestController → Contém os endpoints da API
@@ -35,8 +35,8 @@ Estrutura Backend:
  config/
  WsConfig → Configurações para integração SOAP
  WsClient → Cliente SOAP responsável por buscar solicitações externas
- 
- Fluxo do Backend 
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+###  Fluxo do Backend 
  
 • O usuário faz uma requisição para obter ou sincronizar solicitações.
 
@@ -55,7 +55,7 @@ novas solicitações.
  novas solicitações.
 
 • A resposta é retornada ao frontend ou armazenada no banco.
-
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
  frontend (React.js)
 
 components/ → Componentes reutilizáveis
