@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @Table(name = "model_request")
 public class ModelRequest implements Serializable {
 
-    // Getters e Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,6 +28,8 @@ public class ModelRequest implements Serializable {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    public ModelRequest() {}
+    @Version  // Controle de concorrência otimista
+    private Integer version;
 
+    public ModelRequest() {}
 }

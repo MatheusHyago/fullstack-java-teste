@@ -18,18 +18,24 @@ public class ModelRequestService {
     @Autowired
     private WsClient wsClient;
 
+    // Método para buscar todos os registros no banco de dados
     public List<ModelRequest> getAllModelRequests() {
-        return modelRequestRepository.findAll(); // ✅ Agora o método existe!
+        return modelRequestRepository.findAll();
     }
 
+    // Método para sincronizar as solicitações com o WS e atualizar o banco de dados
     public List<ModelRequest> sincronizarSolicitacoes() {
         LocalDateTime startDate = LocalDate.now().minusMonths(3).atStartOfDay();
         LocalDateTime endDate = LocalDate.now().atStartOfDay();
 
         List<ModelRequest> modelRequests = wsClient.BuscarSolicitacoes(startDate, endDate);
 
+        // Verifica se encontrou solicitações e faz o log adequado
         if (modelRequests != null && !modelRequests.isEmpty()) {
+            System.out.println("Synchronizing " + modelRequests.size() + " requests.");
             modelRequestRepository.saveAll(modelRequests);
+        } else {
+            System.out.println("No new requests found.");
         }
 
         return modelRequests;

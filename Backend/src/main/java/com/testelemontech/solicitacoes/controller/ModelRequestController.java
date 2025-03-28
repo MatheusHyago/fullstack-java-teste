@@ -16,12 +16,17 @@ public class ModelRequestController {
     @Autowired
     private ModelRequestService service;
 
+    // Endpoint para retornar todas as solicitações armazenadas no banco
     @GetMapping
     public ResponseEntity<List<ModelRequest>> getAllSolicitacoes() {
         List<ModelRequest> solicitacoes = service.getAllModelRequests();
+        if (solicitacoes.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
         return ResponseEntity.ok(solicitacoes);
     }
 
+    // Endpoint para sincronizar todas as solicitações
     @GetMapping("/sincronizar")
     public ResponseEntity<?> sincronizarSolicitacoes() {
         try {
