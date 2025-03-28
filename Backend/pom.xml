@@ -69,7 +69,7 @@
 						<id>generate-sources</id>
 						<phase>generate-sources</phase>
 						<configuration>
-							<sourceRoot>Backend/src/main/resources/generated-sources/cxf</sourceRoot>
+							<sourceRoot>src/main/resources/generated-sources/cxf</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
 									<wsdl>https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBookingService?wsdl</wsdl>
