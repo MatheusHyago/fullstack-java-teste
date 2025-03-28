@@ -15,25 +15,33 @@ ________________________________________________________________________________
 Modelo de Arquitetura utilizado: MVC divido em duas partes Backend / Frontend 
 
 Backend estrutura / tecnologia e bibliotecas
+
 Linguagem Java 17
+
 Bibliotecas Spring Boot
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________
 ### Estrutura Backend
 
  controller/
+ 
  ModelRequestController → Contém os endpoints da API
 
  service/
+ 
  ModelRequestService  → Contém as regras de negócio, incluindo a sincronização de solicitações
 
  repository/
+ 
  ModelRequestRepository  →  Interface de comunicação com o banco de dados utilizando Spring Data JPA
 
  model/
+ 
  ModelRequest  → Entidades da aplicação
 
  config/
+ 
  WsConfig → Configurações para integração SOAP
+ 
  WsClient → Cliente SOAP responsável por buscar solicitações externas
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________
 ###  Fluxo do Backend 
