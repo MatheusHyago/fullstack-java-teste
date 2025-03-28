@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @Entity
-@Table(name = "model_request")
+@Table(name = "model_requests")
 public class ModelRequest implements Serializable {
 
     @Id
