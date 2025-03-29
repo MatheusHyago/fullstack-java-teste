@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Slf4j // Adiciona suporte a logs (evita System.out.println)
+@Slf4j
 @RestController
 @RequestMapping("/solicitacoes")
 @CrossOrigin(origins = "*")
