@@ -1,9 +1,9 @@
 const API_URL = 'http://localhost:8081/solicitacoes';
 
-// 🟢 Carrega a lista de solicitações
+// Carrega a lista de solicitações
 async function carregarSolicitacoes() {
     const lista = document.getElementById("listaSolicitacoes");
-    lista.innerHTML = "<tr><td colspan='5'>Carregando...</td></tr>";
+    lista.innerHTML = "<tr><td colspan='4'>Carregando...</td></tr>";
 
     try {
         const response = await fetch(API_URL);
@@ -11,22 +11,22 @@ async function carregarSolicitacoes() {
 
         lista.innerHTML = "";
         solicitacoes.forEach(solicitacao => {
-            const row = `<tr>
+            const row = document.createElement("tr");
+            row.innerHTML = `
                 <td>${solicitacao.id}</td>
                 <td>${solicitacao.nomePassageiro}</td>
                 <td>${solicitacao.cidadeOrigem}</td>
                 <td>${solicitacao.cidadeDestino}</td>
-                <td><button onclick="deletarSolicitacao(${solicitacao.id})">🗑</button></td>
-            </tr>`;
-            lista.innerHTML += row;
+            `;
+            lista.appendChild(row);
         });
     } catch (error) {
         console.error(error);
-        lista.innerHTML = "<tr><td colspan='5'>Erro ao carregar</td></tr>";
+        lista.innerHTML = "<tr><td colspan='4'>Erro ao carregar</td></tr>";
     }
 }
 
-// 🟡 Cria uma nova solicitação
+// Cria uma nova solicitação
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("formSolicitacao");
     if (form) {
@@ -42,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 status: null
             };
 
+            if (!novaSolicitacao.nomePassageiro || !novaSolicitacao.ciaAerea || !novaSolicitacao.cidadeOrigem || !novaSolicitacao.cidadeDestino) {
+                alert("Todos os campos são obrigatórios.");
+                return;
+            }
+
             try {
                 const response = await fetch(API_URL, {
                     method: "POST",
@@ -52,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (!response.ok) throw new Error("Erro ao criar");
 
                 alert("Solicitação criada!");
-                window.location.href = "index.html";
+                carregarSolicitacoes(); // Atualiza a lista sem recarregar a página
             } catch (error) {
                 console.error(error);
                 alert("Erro ao criar solicitação.");
@@ -61,21 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// 🔴 Deletar uma solicitação
-async function deletarSolicitacao(id) {
-    if (confirm("Tem certeza que deseja excluir?")) {
-        try {
-            await fetch(`${API_URL}/${id}`, { method: "DELETE" });
-            alert("Solicitação excluída!");
-            carregarSolicitacoes();
-        } catch (error) {
-            console.error(error);
-            alert("Erro ao excluir.");
-        }
-    }
-}
-
-// ⚡️ Carrega a lista quando a página abrir
+// Carrega a lista quando a página abrir
 if (document.getElementById("listaSolicitacoes")) {
     carregarSolicitacoes();
 }
