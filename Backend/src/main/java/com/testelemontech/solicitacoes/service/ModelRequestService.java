@@ -31,11 +31,11 @@ public class ModelRequestService {
         List<ModelRequest> modelRequests = wsClient.BuscarSolicitacoes(startDate, endDate);
 
         if (modelRequests == null || modelRequests.isEmpty()) {
-            log.info("⚠️ Nenhuma nova solicitação encontrada.");
+            log.info(" Nenhuma nova solicitação encontrada.");
             return List.of();
         }
 
-        log.info("🔄 Sincronizando {} solicitações...", modelRequests.size());
+        log.info(" Sincronizando {} solicitações...", modelRequests.size());
 
         // Garante que os dados sejam tratados corretamente antes de salvar
         modelRequests.forEach(request -> {
