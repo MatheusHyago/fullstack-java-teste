@@ -5,7 +5,7 @@ async function carregarSolicitacoes() {
     const lista = document.getElementById("listaSolicitacoes");
     if (!lista) return; 
 
-    lista.innerHTML = "<tr><td colspan='4'>Carregando...</td></tr>";
+    lista.innerHTML = "<tr><td colspan='7'>Carregando...</td></tr>"; // Ajuste o colspan para 7
 
     try {
         const response = await fetch(API_URL);
@@ -16,13 +16,16 @@ async function carregarSolicitacoes() {
             <tr>
                 <td>${solicitacao.id}</td>
                 <td>${solicitacao.nomePassageiro}</td>
+                <td>${solicitacao.ciaAerea}</td> <!-- Exibe CIA Aérea -->
+                <td>${solicitacao.dataHoraSaida}</td> <!-- Exibe Data/Hora de Saída -->
+                <td>${solicitacao.dataHoraChegada}</td> <!-- Exibe Data/Hora de Chegada -->
                 <td>${solicitacao.cidadeOrigem}</td>
                 <td>${solicitacao.cidadeDestino}</td>
             </tr>
         `).join("");
     } catch (error) {
         console.error(error);
-        lista.innerHTML = "<tr><td colspan='4'>Erro ao carregar</td></tr>";
+        lista.innerHTML = "<tr><td colspan='7'>Erro ao carregar</td></tr>"; // Ajuste o colspan para 7
     }
 }
 
@@ -40,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cidadeDestino: document.getElementById("cidadeDestino").value.trim(),
             dataHoraSaida: document.getElementById("dataIda").value,
             dataHoraChegada: document.getElementById("dataVolta").value,
+            ciaAerea: document.getElementById("ciaAerea").value, // Novo campo para CIA Aérea
             status: "Pendente"
         };
 
