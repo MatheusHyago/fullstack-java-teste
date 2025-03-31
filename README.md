@@ -22,8 +22,6 @@ Este projeto foi desenvolvido como um desafio para demonstrar habilidades em des
   - `/lombok`
 - **Maven**: Ferramenta de gerenciamento de dependências e build do projeto.
 - **MySQL**: Banco de dados relacional utilizado para armazenar as solicitações de viagens.
-- **Spring Data JPA**: Abstração para facilitar a interação com o banco de dados.
-- **SOAP Web Service**: Consumo da API utilizando `WebServiceTemplate` e JAXB.
 
 ### Frontend
 - **HTML**: Estrutura das páginas.
