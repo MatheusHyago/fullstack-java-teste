@@ -27,7 +27,6 @@ Este projeto foi desenvolvido como um desafio para demonstrar habilidades em des
 - **HTML**: Estrutura das páginas.
 - **CSS**: Estilização e layout da interface.
 - **JavaScript**: Lógica de interatividade e integração com a API.
-- **Fetch API**: Utilizada para realizar requisições assíncronas para o backend.
 
 ## Estrutura do Projeto
 
