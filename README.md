@@ -41,8 +41,7 @@ fullstack-java-teste/
 │   │   │   ├── service/        # Regras de negócio e lógica de serviços
 │   │   │   ├── repository/     # Interfaces de acesso ao banco de dados (Spring Data JPA)
 │   │   │   ├── model/          # Entidades (Mapeamento das tabelas do banco)
-│   │   │   ├── dto/            # Objetos de transferência de dados
-│   │   │   ├── config/         # Configurações do projeto (ex: CORS, Beans, etc.)
+│   │   │   ├── config/         # Configurações do projeto (ex: Beans, etc.)
 │   │   ├── resources/          # Arquivos de configuração e templates
 │   │       ├── application.properties  # Configuração do Spring Boot
 │   ├── pom.xml                     # Configuração do Maven e dependências
