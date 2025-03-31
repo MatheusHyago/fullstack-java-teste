@@ -5,81 +5,34 @@ Você deverá criar uma aplicação consumidora de nossa API de webservice para 
 Endpoint: https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBookingService?wsdl
 
 Método a ser utilizado: pesquisarSolicitacao.
+________________________________________________________________________________________________________________________________________________________________________________
 
-### Requisito
+# Fullstack Java Teste
 
-Consultar as solicitações de viagens filtrando pelos últimos 3 meses e separar apenas as que contenham produtos Aéreos.
-______________________________________________________________________________________________________________________________________________________________________________________________________________________
-### Arquitetura e documentação
+Este projeto foi desenvolvido como um desafio para demonstrar habilidades em desenvolvimento fullstack, utilizando Java no backend e tecnologias web no frontend.
 
-Modelo de Arquitetura utilizado: MVC divido em duas partes Backend / Frontend 
+## Tecnologias Utilizadas
 
-Backend estrutura / tecnologia e bibliotecas
+### Backend
+- **Java 11**: Linguagem utilizada para o desenvolvimento.
+- **Spring Boot**: Framework que facilita a criação de APIs REST e aplicações web.
+- **Maven**: Ferramenta de gerenciamento de dependências e build do projeto.
 
-Linguagem Java 17
+### Frontend
+- **HTML5**: Estrutura das páginas.
+- **CSS3**: Estilização e layout da interface.
+- **JavaScript**: Lógica de interatividade e integração com a API.
+- **Fetch API**: Comunicação assíncrona com o backend para obtenção e envio de dados.
 
-Bibliotecas Spring Boot
-______________________________________________________________________________________________________________________________________________________________________________________________________________________
-### Estrutura Backend
+## Estrutura do Projeto
 
- controller/
- 
- ModelRequestController → Contém os endpoints da API
-
- service/
- 
- ModelRequestService  → Contém as regras de negócio, incluindo a sincronização de solicitações
-
- repository/
- 
- ModelRequestRepository  →  Interface de comunicação com o banco de dados utilizando Spring Data JPA
-
- model/
- 
- ModelRequest  → Entidades da aplicação
-
- config/
- 
- WsConfig → Configurações para integração SOAP
- 
- WsClient → Cliente SOAP responsável por buscar solicitações externas
-______________________________________________________________________________________________________________________________________________________________________________________________________________________
-###  Fluxo do Backend 
- 
-• O usuário faz uma requisição para obter ou sincronizar solicitações.
-
-• O Controller recebe a requisição e chama o Service.
-
-• O Service executa as regras de negócio e acessa o Repository para interagir com o banco de dados. Quando necessário, o WsClient realiza uma integração SOAP para buscar
-novas solicitações.
-
-• A resposta é retornada ao frontend ou armazenada no banco.
-
-• usuário faz uma requisição para obter ou sincronizar solicitações.
-
-• Controller recebe a requisição e chama o Service.
-
-• Service executa as regras de negócio e acessa o Repository para interagir com o banco de dados. Quando necessário, o WsClient realiza uma integração SOAP para buscar 
- novas solicitações.
-
-• A resposta é retornada ao frontend ou armazenada no banco.
-______________________________________________________________________________________________________________________________________________________________________________________________________________________
- frontend (React.js)
-
-components/ → Componentes reutilizáveis
-
- services/ → Requisições para o backend
-
-
-### Avaliação
-
-Entre os critérios de avaliação estão:
-
-* Facilidade de configuração do projeto
-* Performance
-* Código limpo e organização
-* Documentação de código
-* Documentação do projeto (readme)
-* Arquitetura
-* Boas práticas de desenvolvimento
-* Design Patterns
+```plaintext
+fullstack-java-teste/
+├── Backend/             # Código do backend (Spring Boot)
+│   ├── src/
+│   └── pom.xml          # Configuração do Maven
+└── Frontend/            # Código do frontend
+    ├── css/             # Arquivos de estilo (CSS)
+    ├── js/              # Scripts JavaScript (ex.: app.js, app_create.js)
+    ├── home.html        # Página inicial com listagem de solicitações
+    └── create.html      # Página para criação de solicitações fictícias
