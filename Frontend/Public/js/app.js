@@ -59,7 +59,12 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!response.ok) throw new Error("Erro ao criar solicitação");
 
             alert("Solicitação criada!");
-            window.location.href = "home.html"; 
+
+            // Recarrega a lista de solicitações sem redirecionar
+            carregarSolicitacoes(); 
+
+            // Limpa o formulário após criação
+            form.reset();
         } catch (error) {
             console.error(error);
             alert("Erro ao criar solicitação.");
@@ -67,4 +72,5 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Carrega as solicitações inicialmente
 carregarSolicitacoes();
