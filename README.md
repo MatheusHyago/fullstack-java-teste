@@ -54,8 +54,7 @@ fullstack-java-teste/
     ├── css/                     # Estilos (CSS)
     ├── js/                      # Scripts para manipulação da API
     ├── home.html                # Página principal com listagem de solicitações
-    ├── create.html              # Página para criar novas solicitações
-    ├── index.html               # Página inicial
+    ├── create.html              # Página para criar solicitações ficticias
 ```
 
 ---
