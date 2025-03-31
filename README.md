@@ -117,6 +117,5 @@ export SOAP_WSDL_URL=https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBo
 |--------|----------------------------|-----------|
 | `GET`  | `/solicitacoes`            | Lista todas as solicitações armazenadas |
 | `GET`  | `/solicitacoes/sincronizar` | Sincroniza novas solicitações da API SOAP |
-| `POST` | `/solicitacoes`            | Cria uma nova solicitação manualmente |
 
 ---
