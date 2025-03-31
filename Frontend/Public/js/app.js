@@ -5,7 +5,7 @@ async function carregarSolicitacoes() {
     const lista = document.getElementById("listaSolicitacoes");
     if (!lista) return; 
 
-    lista.innerHTML = "<tr><td colspan='7'>Carregando...</td></tr>"; // Ajuste o colspan para 7
+    lista.innerHTML = "<tr><td colspan='7'>Carregando...</td></tr>"; 
 
     try {
         const response = await fetch(API_URL);
@@ -25,7 +25,7 @@ async function carregarSolicitacoes() {
         `).join("");
     } catch (error) {
         console.error(error);
-        lista.innerHTML = "<tr><td colspan='7'>Erro ao carregar</td></tr>"; // Ajuste o colspan para 7
+        lista.innerHTML = "<tr><td colspan='7'>Erro ao carregar</td></tr>"; 
     }
 }
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cidadeDestino: document.getElementById("cidadeDestino").value.trim(),
             dataHoraSaida: document.getElementById("dataIda").value,
             dataHoraChegada: document.getElementById("dataVolta").value,
-            ciaAerea: document.getElementById("ciaAerea").value, // Novo campo para CIA Aérea
+            ciaAerea: document.getElementById("ciaAerea").value, 
             status: "Pendente"
         };
 
@@ -64,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             alert("Solicitação criada!");
 
-            // Recarrega a lista de solicitações sem redirecionar
+           
             carregarSolicitacoes(); 
 
-            // Limpa o formulário após criação
+            
             form.reset();
         } catch (error) {
             console.error(error);

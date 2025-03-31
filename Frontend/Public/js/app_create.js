@@ -2,14 +2,14 @@ const API_URL = 'http://localhost:8081/solicitacoes';
 
 // Criação da nova solicitação a partir dos dados inseridos no formulário
 document.getElementById('btnCriar').addEventListener('click', async function() {
-    // Obter os dados do formulário
+
     const nomePassageiro = document.getElementById('nome_pax').value.trim();
     const cidadeOrigem = document.getElementById('origem').value.trim();
     const cidadeDestino = document.getElementById('destino').value.trim();
     const dataHoraSaida = document.getElementById('data_ida').value;
     const dataHoraChegada = document.getElementById('data_volta').value;
 
-    // Verificar se todos os campos foram preenchidos
+
     if (!nomePassageiro || !cidadeOrigem || !cidadeDestino || !dataHoraSaida || !dataHoraChegada) {
         alert("Todos os campos são obrigatórios.");
         return;
@@ -25,7 +25,7 @@ document.getElementById('btnCriar').addEventListener('click', async function() {
         status: "Pendente"
     };
 
-    // Exibe os dados da solicitação fictícia no console para verificação
+
     console.log('Solicitação Fictícia Criada:', novaSolicitacao);
 
     try {
