@@ -37,7 +37,6 @@ O projeto segue uma estrutura MVC onde as pastas são separadas por suas seguint
 - `service/`: Contém a lógica de negócios da aplicação.
 - `repository/`: Contém as interfaces para acesso ao banco de dados utilizando o **Spring Data JPA**.
 - `model/`: Define as entidades que representam tabelas no banco de dados.
-- `dto/`: Armazena classes para transferência de dados entre o frontend e backend.
 - `config/`: Contém configurações como segurança, CORS, beans personalizados, etc.
 
 #### **Frontend**
