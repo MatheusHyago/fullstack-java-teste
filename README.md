@@ -70,8 +70,7 @@ fullstack-java-teste/
 - **`service/`**: Contém a **lógica de negócios** da aplicação, como processamento de dados e integração com a API SOAP.
 - **`repository/`**: Interfaces para acesso ao banco de dados utilizando **Spring Data JPA**.
 - **`model/`**: Define as **entidades** que representam as tabelas do banco de dados.
-- **`dto/`**: Contém os **Data Transfer Objects (DTOs)**, que encapsulam dados trafegados entre a API e o frontend.
-- **`config/`**: Contém configurações como **CORS**, Beans personalizados e integração com a API SOAP.
+- **`config/`**: Contém configurações como **Client**, Beans personalizados e integração com a API SOAP.
 
 ### **Frontend**
 - `home.html`: Página principal com a listagem de solicitações carregadas da API.
