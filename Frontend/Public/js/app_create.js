@@ -40,7 +40,7 @@ document.getElementById('btnCriar').addEventListener('click', async function() {
         if (!response.ok) throw new Error('Erro ao criar solicitação');
 
         alert('Solicitação criada com sucesso!');
-        window.location.href = 'home.html';  // Redireciona para a tela inicial
+        window.location.href = 'home.html';  
     } catch (error) {
         console.error(error);
         alert('Erro ao criar solicitação.');
