@@ -22,7 +22,6 @@ A aplicação consome uma **API SOAP** para buscar solicitações de viagens, ar
   - `spring-boot-starter-web`
   - `spring-boot-starter-data-jpa`
   - `spring-boot-starter-validation`
-  - `spring-boot-starter-security`
   - `lombok`
 - **Maven**
 - **MySQL**
