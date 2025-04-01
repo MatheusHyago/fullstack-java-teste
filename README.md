@@ -69,8 +69,8 @@ Arquitetura **MVC** dividindo responsabilidades para manutenção e escalabilida
 ### Configuração das Variáveis de Ambiente
 Defina as seguintes variáveis antes de rodar o backend:
 ```sh
-export MYSQL_HOST= host local
-export MYSQL_PORT= porta local
+export MYSQL_HOST= host_local
+export MYSQL_PORT= porta_local
 export MYSQL_DB= schema mysql
 export MYSQL_USER= seu_usuario
 export MYSQL_PASSWORD= sua_senha
