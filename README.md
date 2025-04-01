@@ -58,8 +58,6 @@ Arquitetura **MVC** dividindo responsabilidades para manutenção e escalabilida
 
 ---
 
-## Lógica de Negócio
-
 Após o consumo da API SOAP pelo método `pesquisarSolicitacao`, o serviço realiza os seguintes passos:
 
 1. **Filtragem Temporal:** Seleciona apenas as solicitações criadas nos últimos 3 meses.
@@ -67,6 +65,18 @@ Após o consumo da API SOAP pelo método `pesquisarSolicitacao`, o serviço real
 3. **Extração de Dados Essenciais:** Para cada solicitação filtrada, extrai informações como Nome do Passageiro, CIA Aérea, Data/Hora de Saída e Chegada, Cidades de Origem e Destino.
 4. **Persistência:** Os dados extraídos são enviados à camada de repositório para serem persistidos no banco de dados MySQL.
 
+### Diagrama de Arquitetura
+
+```mermaid
+graph LR
+    A[Cliente / Endpoint REST] --> B[Controller]
+    B --> C[Service (Sincronização)]
+    C --> D[Consumo da API SOAP]
+    D --> E[Retorno de Solicitações]
+    E --> F[Filtro de Dados<br/>(últimos 3 meses e produtos Aéreos)]
+    F --> G[Repository]
+    G --> H[Banco MySQL]
+````
 ---
 
 ## Como Executar o Projeto
