@@ -93,7 +93,8 @@ export SOAP_WSDL_URL=https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBo
    ```sh
    mvn spring-boot:run
    ```
-4. Teste a API em http://localhost:8081/solicitacoes/```
+4. Teste a API em http://localhost:8081/solicitacoes/
+   
                   http://localhost:8081/solicitacoes/sincronizar
 
 ### Rodando o Frontend - Abra `home.html` no navegador.
