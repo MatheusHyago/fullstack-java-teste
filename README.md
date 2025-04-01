@@ -91,6 +91,9 @@ export SOAP_WSDL_URL=https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBo
    ```
 3. Compile e execute:
    ```sh
+   mvn clean install
+   ```
+      ```sh
    mvn spring-boot:run
    ```
 4. Teste a API em:
