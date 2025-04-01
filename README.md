@@ -98,28 +98,6 @@ export SOAP_PASSWORD=sua_senha
 export SOAP_WSDL_URL=https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBookingService?wsdl
 ```
 
-## Como Executar o Projeto
-
-### Pré-requisitos
-- [Java 17+](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-- [Maven](https://maven.apache.org/)
-- [MySQL](https://dev.mysql.com/downloads/installer/)
-- [Postman](https://www.postman.com/) (opcional)
-
-### Configuração das Variáveis de Ambiente
-Defina as seguintes variáveis antes de rodar o backend:
-```sh
-export MYSQL_HOST= host_local
-export MYSQL_PORT= porta_local
-export MYSQL_DB= schema mysql
-export MYSQL_USER= seu_usuario
-export MYSQL_PASSWORD= sua_senha
-export SERVER_PORT=8081
-export SOAP_USERNAME=seu_usuario
-export SOAP_PASSWORD=sua_senha
-export SOAP_WSDL_URL=https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBookingService?wsdl
-```
-
 ### Rodando o Backend
 1. Clone o repositório:
    ```sh
