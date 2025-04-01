@@ -102,5 +102,17 @@ http://localhost:8081/solicitacoes
    
 http://localhost:8081/solicitacoes/sincronizar
 
-### Rodando o Frontend - Abra `home.html` no navegador.
+### Rodando o Frontend
+1. Abra o command prompt do Node.js e entre na pasta:
+   ```sh
+   C:\Users\litch\Documents\fullstack-java-teste\Frontend\Server
+   ```
+2. Execute o comando:
+   ```sh
+   npm start
+   ```
+3. O servidor rodará na porta 3000 como localhost:
+   ```sh
+   http://localhost:3000
+   ```
 ```
