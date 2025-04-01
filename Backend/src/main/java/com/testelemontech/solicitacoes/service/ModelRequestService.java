@@ -39,7 +39,7 @@ public class ModelRequestService {
 
         // Garante que os dados sejam tratados corretamente antes de salvar
         modelRequests.forEach(request -> {
-            request.setId(null); // Para evitar erro de entidade destacada
+            request.setId(null); 
             request.setUpdatedAt(LocalDateTime.now());
         });
 
