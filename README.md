@@ -68,14 +68,12 @@ Após o consumo da API SOAP pelo método `pesquisarSolicitacao`, o serviço real
 ### Diagrama de Arquitetura
 
 ```mermaid
-graph LR
-    A[Cliente / Endpoint REST] --> B[Controller]
-    B --> C[Service (Sincronização)]
-    C --> D[Consumo da API SOAP]
-    D --> E[Retorno de Solicitações]
-    E --> F[Filtro de Dados<br/>(últimos 3 meses e produtos Aéreos)]
-    F --> G[Repository]
-    G --> H[Banco MySQL]
+graph TD
+    A[Início] --> B{API SOAP}
+    B -->|Consulta| C[Service (Sincronização)]
+    C -->|Filtra dados| D[Banco de Dados MySQL]
+    D -->|Exposição| E[Endpoints REST]
+    E -->|Front-end Consome| F[Interface do Usuário]
 ```
 ---
 
