@@ -67,14 +67,14 @@ Após o consumo da API SOAP pelo método `pesquisarSolicitacao`, o serviço real
 
 ### Diagrama de Arquitetura
 
-
+```
 graph TD
     A[Início] --> B{API SOAP}
-    B -->|Consulta| C[Service (Sincronização)]
+    B -->|Consulta| C["Service - Sincronização"]
     C -->|Filtra dados| D[Banco de Dados MySQL]
     D -->|Exposição| E[Endpoints REST]
     E -->|Front-end Consome| F[Interface do Usuário]
-
+```
 ---
 
 ## Como Executar o Projeto
