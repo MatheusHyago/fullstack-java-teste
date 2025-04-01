@@ -105,7 +105,7 @@ http://localhost:8081/solicitacoes/sincronizar
 ### Rodando o Frontend
 1. Abra o command prompt do Node.js e entre na pasta:
    ```sh
-   C:\Users\litch\Documents\fullstack-java-teste\Frontend\Server
+   cd C:\Users\UserFicticio\fullstack-java-teste\Frontend\Server
    ```
 2. Execute o comando:
    ```sh
