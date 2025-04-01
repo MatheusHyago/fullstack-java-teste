@@ -69,18 +69,16 @@ Arquitetura **MVC** dividindo responsabilidades para manutenção e escalabilida
 ### Configuração das Variáveis de Ambiente
 Defina as seguintes variáveis antes de rodar o backend:
 ```sh
-export MYSQL_HOST=localhost
-export MYSQL_PORT=3306
-export MYSQL_DB=db_viagens
-export MYSQL_USER=root
-export MYSQL_PASSWORD=minha_senha_secreta
+export MYSQL_HOST= host local
+export MYSQL_PORT= porta local
+export MYSQL_DB= schema mysql
+export MYSQL_USER= seu_usuario
+export MYSQL_PASSWORD= sua_senha
 export SERVER_PORT=8081
 export SOAP_USERNAME=seu_usuario
 export SOAP_PASSWORD=sua_senha
 export SOAP_WSDL_URL=https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBookingService?wsdl
 ```
-
-> **Dica:** Configure as variáveis no ambiente ou em um arquivo `.env`.
 
 ### Rodando o Backend
 1. Clone o repositório:
