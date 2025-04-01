@@ -98,42 +98,6 @@ export SOAP_PASSWORD=sua_senha
 export SOAP_WSDL_URL=https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBookingService?wsdl
 ```
 
-### Rodando o Backend
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/MatheusHyago/fullstack-java-teste.git
-   ```
-2. Entre na pasta do backend:
-   ```sh
-   cd fullstack-java-teste/Backend
-   ```
-3. Compile e execute:
-   ```sh
-   mvn clean install
-   ```
-      ```sh
-   mvn spring-boot:run
-   ```
-4. Teste a API em:
-   
-http://localhost:8081/solicitacoes
-   
-http://localhost:8081/solicitacoes/sincronizar
-
-### Rodando o Frontend
-1. Abra o command prompt do Node.js e entre na pasta:
-   ```sh
-   cd C:\Users\UserFicticio\fullstack-java-teste\Frontend\Server
-   ```
-2. Execute o comando:
-   ```sh
-   npm start
-   ```
-3. O servidor rodará na porta 3000 como localhost:
-   ```sh
-   http://localhost:3000
-   ```
-
 ## Como Executar o Projeto
 
 ### Pré-requisitos
