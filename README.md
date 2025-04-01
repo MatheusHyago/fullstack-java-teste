@@ -37,11 +37,24 @@ A aplicação consome uma **API SOAP** para buscar solicitações de viagens, ar
 
 Arquitetura **MVC** dividindo responsabilidades para manutenção e escalabilidade.
 
-fullstack-java-teste/ ├── Backend/ │ ├── src/ │ │ ├── main/java/com/testelemontech/solicitacoes/ │ │ │ ├── controller/ │ │ │ ├── service/ │ │ │ ├── repository/ │ │ │ ├── model/ │ │ │ └── config/ │ └── resources/ │ └── application.properties │ └── pom.xml └── Frontend/ ├── css/ ├── js/ ├── home.html └── create.html
+    fullstack-java-teste/
+    ├── Backend/                         
+    │   ├── src/
+    │   │   ├── main/java/com/testelemontech/solicitacoes/
+    │   │   │   ├── controller/     # Define os endpoints da API
+    │   │   │   ├── service/        # Regras de negócio e chamadas à API SOAP
+    │   │   │   ├── repository/     # Persistência de dados (Spring Data JPA)
+    │   │   │   ├── model/          # Entidades que representam tabelas do banco
+    │   │   │   ├── config/         # Configuração do Spring Boot e integração SOAP
+    │   ├── resources/
+    │       ├── application.properties  # Configurações gerais do projeto
+    │   ├── pom.xml                 # Dependências do Maven
+    └── Frontend/                    
+        ├── css/                     # Estilos (CSS)
+        ├── js/                      # Scripts para manipulação da API
+        ├── home.html                # Página principal com listagem de solicitações
+        ├── create.html              # Página para criar solicitações fictícias
 
-less
-Copiar
-Editar
 
 ---
 
