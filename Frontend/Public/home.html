@@ -9,7 +9,10 @@
 <body>
     <div class="container">
         <h1>Solicitações</h1>
-        <button onclick="window.location.href='create.html'">Nova Solicitação</button>
+        <div class="buttons">
+            <button onclick="window.location.href='create.html'">Nova Solicitação</button>
+            <button id="syncButton">Sincronizar Solicitações</button>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -28,5 +31,16 @@
     </div>
 
     <script src="js/app.js"></script>
+    <script>
+        document.getElementById("syncButton").addEventListener("click", function() {
+            sincronizarSolicitacoes();
+        });
+    </script>
+    <style>
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
 </body>
 </html>

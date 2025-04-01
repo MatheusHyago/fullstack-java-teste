@@ -16,9 +16,9 @@ async function carregarSolicitacoes() {
             <tr>
                 <td>${solicitacao.id}</td>
                 <td>${solicitacao.nomePassageiro}</td>
-                <td>${solicitacao.ciaAerea}</td> <!-- Exibe CIA Aérea -->
-                <td>${solicitacao.dataHoraSaida}</td> <!-- Exibe Data/Hora de Saída -->
-                <td>${solicitacao.dataHoraChegada}</td> <!-- Exibe Data/Hora de Chegada -->
+                <td>${solicitacao.ciaAerea}</td>
+                <td>${solicitacao.dataHoraSaida}</td>
+                <td>${solicitacao.dataHoraChegada}</td>
                 <td>${solicitacao.cidadeOrigem}</td>
                 <td>${solicitacao.cidadeDestino}</td>
             </tr>
@@ -26,6 +26,20 @@ async function carregarSolicitacoes() {
     } catch (error) {
         console.error(error);
         lista.innerHTML = "<tr><td colspan='7'>Erro ao carregar</td></tr>"; 
+    }
+}
+
+// Sincroniza as solicitações
+async function sincronizarSolicitacoes() {
+    try {
+        const response = await fetch(`${API_URL}/sincronizar`, { method: "GET" });
+        if (!response.ok) throw new Error("Erro ao sincronizar solicitações");
+        
+        alert("Solicitações sincronizadas com sucesso!");
+        carregarSolicitacoes(); 
+    } catch (error) {
+        console.error(error);
+        alert("Erro ao sincronizar solicitações.");
     }
 }
 
@@ -47,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
             status: "Pendente"
         };
 
-        // Verifica se todos os campos foram preenchidos
         if (Object.values(novaSolicitacao).some(value => !value)) {
             alert("Todos os campos são obrigatórios.");
             return;
@@ -63,17 +76,19 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!response.ok) throw new Error("Erro ao criar solicitação");
 
             alert("Solicitação criada!");
-
-           
             carregarSolicitacoes(); 
-
-            
             form.reset();
         } catch (error) {
             console.error(error);
             alert("Erro ao criar solicitação.");
         }
     });
+
+    // Evento para sincronizar solicitações ao clicar no botão
+    const btnSincronizar = document.getElementById("btnSincronizar");
+    if (btnSincronizar) {
+        btnSincronizar.addEventListener("click", sincronizarSolicitacoes);
+    }
 });
 
 // Carrega as solicitações inicialmente
