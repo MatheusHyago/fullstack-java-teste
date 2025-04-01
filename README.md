@@ -95,7 +95,7 @@ export SOAP_WSDL_URL=https://treinamento.lemontech.com.br/wsselfbooking/WsSelfBo
    ```
 4. Teste a API em:
    
-http://localhost:8081/solicitacoes/
+http://localhost:8081/solicitacoes
    
 http://localhost:8081/solicitacoes/sincronizar
 
